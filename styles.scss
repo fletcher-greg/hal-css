@@ -1,0 +1,98 @@
+body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgb(5, 10, 19);
+  display: grid;
+  place-items: center;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+.hal-box {
+  background: black;
+  height: 800px;
+  width: 300px;
+  display: grid;
+  border-radius: 10px;
+  place-items: end center;
+  position: relative;
+  color: white;
+  animation: float 6s forwards ease-in-out infinite;
+
+  &::before {
+    position: absolute;
+    content: "Hal";
+    text-transform: uppercase;
+    top: 20px;
+    right: 50%;
+    text-align: end;
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-size: 30px;
+    width: 100px;
+    border: 1px solid rgb(83, 123, 177);
+
+    background: rgb(83, 123, 177);
+  }
+  &::after {
+    position: absolute;
+    content: " 9000";
+    text-transform: uppercase;
+    color: white;
+    background: black;
+    border: 1px solid rgb(83, 123, 177);
+    top: 20px;
+    left: 50%;
+    letter-spacing: 2px;
+    font-size: 30px;
+    width: 100px;
+    // height: calc(auto - 2px);
+    text-align: justify;
+  }
+
+  svg {
+    margin-top: 15em;
+
+    border-radius: 50%;
+
+    .outer-red {
+      fill: rgb(163, 17, 17);
+    }
+    .inner-red {
+      fill: red;
+    }
+    .outer-yellow {
+      fill: rgb(228, 228, 0);
+    }
+    .inner-yellow {
+      fill: rgb(255, 255, 53);
+    }
+    &:hover {
+      box-shadow: 0 0 0 0 rgb(255, 2, 2);
+      animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    }
+  }
+  .speakers {
+    width: 100%;
+    background-color: #dddddd44;
+    background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23000000' fill-opacity='0.4' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
+    height: 200px;
+  }
+}
+@keyframes pulse {
+  to {
+    box-shadow: 0 0 0 40px rgba(232, 76, 61, 0);
+  }
+}
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-30px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
